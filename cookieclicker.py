@@ -64,9 +64,11 @@ class Game():
                 self.gold += 10
 
             if event.type == pygame.MOUSEBUTTONDOWN and self.menu == 1 and x_pos <= 404 and x_pos >= 267 and y_pos <= 218 and y_pos >= 127 and self.gold >= 500:
+                pygame.mixer.music.load('cookiechef.ogg')
                 self.gold -= 500
                 self.timer = (pygame.time.get_ticks()+1000)
                 self.shop_text = 'Bought "The cookie chef"'
+                pygame.mixer.music.play()
                 self.cookiechef_amount += 1
                 self.earning += 50
 
